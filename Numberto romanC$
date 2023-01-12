@@ -1,0 +1,30 @@
+Console.WriteLine("1-3999");	
+		Console.Write("Please Enter a Number: ");
+		
+		 int inputNum;
+		 inputNum=Convert.ToInt32(Console.ReadLine());
+		 Console.WriteLine("");
+		 
+
+        if (inputNum < 1 || inputNum > 3999)
+        {
+            Console.WriteLine("Out of range");
+            return;
+        }
+
+        int[] numbers = { 1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1 };
+        string[] romanNumerals = { "M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I" };
+        string romanNumeral = "";
+
+        for (int i = 0; i < numbers.Length; i++)
+        {
+            while (inputNum >= numbers[i])
+            {
+                romanNumeral += romanNumerals[i];
+                inputNum -= numbers[i];
+            }
+        }
+        
+        Console.WriteLine(romanNumeral);
+        
+        Console.ReadKey(true);
